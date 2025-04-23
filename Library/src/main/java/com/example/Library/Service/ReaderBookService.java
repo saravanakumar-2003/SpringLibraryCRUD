@@ -20,6 +20,9 @@ public class ReaderBookService {
     @Autowired
     BookService bookService;
 
+    @Autowired
+    LibraryService libraryService;
+
     @Transactional
     public void issueBook(String readerName, String bookName){
 
@@ -30,5 +33,7 @@ public class ReaderBookService {
         int readerId = reader.getId();
 
         bookService.issueBook(bookId, readerId);
+
+        libraryService.issueBook();
     }
 }

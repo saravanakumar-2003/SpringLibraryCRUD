@@ -32,4 +32,9 @@ public class LibraryService {
     public void decrementBook() {
         libraryRepository.decrement();
     }
+
+    @Transactional
+    public void issueBook() {
+        libraryRepository.issueBook();
+    }
 }
