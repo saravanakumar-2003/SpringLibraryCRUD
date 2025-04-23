@@ -15,6 +15,10 @@ public interface BookRepository extends JpaRepository<BookEntity, Integer>{
     BookEntity findByTitle(String bookName);
 
     @Modifying
-    @Query("UPDATE BookEntity be SET be.readerId = :readerId WHERE be.bookId = :bookId")
+    @Query("UPDATE BookEntity be SET be.reader.id = :readerId WHERE be.bookId = :bookId")
     void issueBook(@Param("bookId") int bookId,@Param("readerId") int readerId);
+
+    @Modifying
+    @Query("UPDATE LibraryEntity le SET le.booksBorrowed = le.booksBorrowed - 1 WHERE le.id = 0")
+    void decrement();
 }

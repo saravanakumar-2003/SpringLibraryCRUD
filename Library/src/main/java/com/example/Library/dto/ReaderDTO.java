@@ -12,7 +12,7 @@ public class ReaderDTO {
     public ReaderDTO() {
     }
 
-    public ReaderDTO(int id, String name, String email) {
+    public ReaderDTO(String name, String email) {
 
         this.name = name;
         this.email = email;

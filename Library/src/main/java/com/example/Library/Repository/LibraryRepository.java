@@ -12,10 +12,10 @@ import org.springframework.stereotype.Repository;
 public interface LibraryRepository extends JpaRepository<LibraryEntity, Integer> {
 
     @Modifying
-
     @Query("UPDATE LibraryEntity library SET library.totalNoOfBooks = library.totalNoOfBooks + 1 WHERE id = 0")
     void increment();
 
+    @Modifying
     @Query("UPDATE LibraryEntity library SET library.totalNoOfBooks = library.totalNoOfBooks - 1 WHERE id = 0")
     void decrement();
 

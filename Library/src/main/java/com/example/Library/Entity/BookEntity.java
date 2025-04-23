@@ -96,6 +96,14 @@ public class BookEntity {
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
+
+    public ReaderEntity getReader() {
+        return reader;
+    }
+
+    public void setReader(ReaderEntity reader) {
+        this.reader = reader;
+    }
 }
 
 

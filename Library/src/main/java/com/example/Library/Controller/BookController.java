@@ -20,7 +20,7 @@ public class BookController {
     }
 
     @DeleteMapping("/delete")
-    public void delete(@RequestBody int bookId){
+    public void delete(@RequestParam int bookId){
         bookService.delete(bookId);
     }
 
