@@ -37,4 +37,9 @@ public class LibraryService {
     public void issueBook() {
         libraryRepository.issueBook();
     }
+
+    @Transactional
+    public void returnBook() {
+        libraryRepository.returnBook();
+    }
 }

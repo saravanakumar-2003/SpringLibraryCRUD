@@ -22,5 +22,9 @@ public interface LibraryRepository extends JpaRepository<LibraryEntity, Integer>
     @Modifying
     @Query("UPDATE LibraryEntity le SET le.booksBorrowed = le.booksBorrowed + 1 WHERE id = 0")
     void issueBook();
+
+    @Modifying
+    @Query("UPDATE LibraryEntity le SET le.booksBorrowed = le.booksBorrowed - 1 WHERE id = 0")
+    void returnBook();
 }
 

@@ -36,4 +36,16 @@ public class ReaderBookService {
 
         libraryService.issueBook();
     }
+
+    @Transactional
+    public void returnBook(String readerName, String bookName) {
+        BookEntity book = bookRepository.findByTitle(bookName);
+        int bookId = book.getBookId();
+
+        ReaderEntity reader = readerRepository.findByName(readerName);
+        int readerId = reader.getId();
+
+        bookService.returnBook(bookId, readerId);
+        libraryService.returnBook();
+    }
 }

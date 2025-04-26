@@ -49,4 +49,8 @@ public class BookService {
     public void issueBook(int bookId, int readerId){
         bookRepository.issueBook(bookId, readerId);
     }
+
+    public void returnBook(int bookId, int readerId) {
+        bookRepository.returnBook(bookId, readerId);
+    }
 }

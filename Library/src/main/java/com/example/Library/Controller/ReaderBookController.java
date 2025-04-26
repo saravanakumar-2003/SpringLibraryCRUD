@@ -20,4 +20,9 @@ public class ReaderBookController {
         readerBookService.issueBook(readerName,bookName);
 
     }
+
+    @PutMapping("/returnBook")
+    public void returnBook(@RequestParam String readerName, String bookName){
+        readerBookService.returnBook(readerName, bookName);
+    }
 }
